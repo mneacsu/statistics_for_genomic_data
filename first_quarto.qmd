@@ -1,0 +1,49 @@
+---
+title: "Exercise 1"
+format: html
+
+editor: visual
+---
+
+## Part B
+
+### Random number generation
+
+```{r}
+
+x<-rlnorm(100, meanlog=5, sdlog=0.5)
+```
+
+### Histograms
+
+(@) Linear scale:
+
+    ```{r}
+
+    hist(x)
+    ```
+
+(@) Log scale:
+
+    ```{r}
+
+    hist(x)
+    ```
+
+### Violin plot
+
+```{r}
+library(ggplot2)
+
+#Creating a dataframe (because ggplot needs one)
+df<-data.frame(x=x)
+
+ggplot(df)+
+
+  geom_violin(aes(x='', y=x))+
+
+  xlab('')
+```
+
+### Mean and standard deviation 
+The mean is `r mean(x)` and the sd is `r sd(x)`.
